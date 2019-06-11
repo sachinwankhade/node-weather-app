@@ -1,14 +1,3 @@
-fetch('http://localhost:8000/weather?address=!').then((response)=>{
-    response.json().then((data)=>{
-        if(data.error){
-            console.log(data.error)
-        }else{
-            console.log(data.location)
-            console.log(data.summary)
-        }
-    })
-})
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.getElementById('message-1');
@@ -20,7 +9,7 @@ weatherForm.addEventListener('submit', (e)=>{
     messageTwo.textContent = '';
 
     const location = search.value;
-    const url = 'http://localhost:8000/weather?address='+location;
+    const url = '/weather?address='+location;
     fetch(url).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
