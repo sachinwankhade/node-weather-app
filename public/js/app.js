@@ -1,5 +1,3 @@
-console.log('Client side js file is loaded')
-
 fetch('http://localhost:8000/weather?address=!').then((response)=>{
     response.json().then((data)=>{
         if(data.error){
